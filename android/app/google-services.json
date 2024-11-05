@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "548000609414",
+    "project_id": "airbnbs-bba54",
+    "storage_bucket": "airbnbs-bba54.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548000609414:android:9fc3c12e2f02cb29dccd07",
+        "android_client_info": {
+          "package_name": "com.example.airbnb_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548000609414-ur9lp8aksdvi77mao8926pmclep2rn60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.airbnb_app",
+            "certificate_hash": "bf0da66249904c552144562f17ef34d6c69c0137"
+          }
+        },
+        {
+          "client_id": "548000609414-icjcqkm8jeajuedsllbkrojf7ggn406l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0lVuTfqCczspUN5rB4UKWLN61cWFFpuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548000609414-icjcqkm8jeajuedsllbkrojf7ggn406l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548000609414-d5n09cndkf2nmm28v4ns98age0hb46a8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.airbnbApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
