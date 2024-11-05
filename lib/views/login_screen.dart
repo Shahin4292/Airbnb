@@ -1,3 +1,4 @@
+import 'package:airbnb_app/service/authentication/google_and_firebase_auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -31,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16,bottom: 16),
+              padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   RichText(
                     text: const TextSpan(
                       text:
-                      "We'll call or text you to confirm your number. Standard message and data rates apply. ",
+                          "We'll call or text you to confirm your number. Standard message and data rates apply. ",
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black,
@@ -118,11 +119,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     Colors.blue,
                     30,
                   ),
-                  const SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   InkWell(
                     borderRadius: BorderRadius.circular(12),
                     onTap: () async {
-                      // await FirebaseAuthServices().signInWithGoogle();
+                      await FirebaseAuthService().signInWithGoogle();
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
@@ -138,7 +141,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       27,
                     ),
                   ),
-                  const SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   socialIcons(
                     size,
                     Icons.apple,
@@ -146,7 +151,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     Colors.black,
                     30,
                   ),
-                  const SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   socialIcons(
                     size,
                     Icons.email_outlined,
