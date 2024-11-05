@@ -14,159 +14,154 @@ class _LoginScreenState extends State<LoginScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          "Log in or sign up",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
-        child: SafeArea(
-          bottom: false,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Center(
-                child: Text(
-                  "Log in or sign up",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16,bottom: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Welcome to Airbnb",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ),
-              const Divider(
-                color: Colors.black12,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Welcome to Airbnb",
+                  SizedBox(
+                    height: size.height * 0.02,
+                  ),
+                  // for phone number field,
+                  phoneNumberField(size),
+                  const SizedBox(height: 10),
+                  RichText(
+                    text: const TextSpan(
+                      text:
+                      "We'll call or text you to confirm your number. Standard message and data rates apply. ",
                       style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.black,
                       ),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.02,
-                    ),
-                    // for phone number field,
-                    phoneNumberField(size),
-                    const SizedBox(height: 10),
-                    RichText(
-                      text: const TextSpan(
-                        text:
-                        "We'll call or text you to conform your number. Standard message and data rates apply.  ",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.black,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: "Privacy Policy",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: size.height * 0.03),
-                    Container(
-                      width: size.width,
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.pink,
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "Continue",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: size.height * 0.026),
-                    Row(
                       children: [
-                        Expanded(
-                          child: Container(
-                            height: 1,
-                            color: Colors.black26,
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
-                            "or",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            height: 1,
-                            color: Colors.black26,
+                        TextSpan(
+                          text: "Privacy Policy",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.015),
-                    socialIcons(
-                      size,
-                      Icons.facebook,
-                      "Continue with Facebook",
-                      Colors.blue,
-                      30,
+                  ),
+                  SizedBox(height: size.height * 0.03),
+                  Container(
+                    width: size.width,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.pink,
                     ),
-                    InkWell(
-                      // onTap: () async {
-                      //   await FirebaseAuthServices().signInWithGoogle();
-                      //   Navigator.pushReplacement(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => const AppMainScreen(),
-                      //     ),
-                      //   );
-                      // },
-                      child: socialIcons(
-                        size,
-                        FontAwesomeIcons.google,
-                        "Continue with Google",
-                        Colors.pink,
-                        27,
-                      ),
-                    ),
-                    socialIcons(
-                      size,
-                      Icons.apple,
-                      "Continue with Apple",
-                      Colors.black,
-                      30,
-                    ),
-                    socialIcons(
-                      size,
-                      Icons.email_outlined,
-                      "Continue with email",
-                      Colors.black,
-                      30,
-                    ),
-                    const SizedBox(height: 10),
-                    const Center(
+                    child: const Center(
                       child: Text(
-                        "Need help?",
+                        "Continue",
                         style: TextStyle(
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          fontSize: 17,
+                          color: Colors.white,
                         ),
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  ),
+                  SizedBox(height: size.height * 0.026),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.black26,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          "or",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.black26,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: size.height * 0.015),
+                  socialIcons(
+                    size,
+                    Icons.facebook,
+                    "Continue with Facebook",
+                    Colors.blue,
+                    30,
+                  ),
+                  InkWell(
+                    // onTap: () async {
+                    //   await FirebaseAuthServices().signInWithGoogle();
+                    //   Navigator.pushReplacement(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => const AppMainScreen(),
+                    //     ),
+                    //   );
+                    // },
+                    child: socialIcons(
+                      size,
+                      FontAwesomeIcons.google,
+                      "Continue with Google",
+                      Colors.pink,
+                      27,
+                    ),
+                  ),
+                  socialIcons(
+                    size,
+                    Icons.apple,
+                    "Continue with Apple",
+                    Colors.black,
+                    30,
+                  ),
+                  socialIcons(
+                    size,
+                    Icons.email_outlined,
+                    "Continue with email",
+                    Colors.black,
+                    30,
+                  ),
+                  const SizedBox(height: 10),
+                  const Center(
+                    child: Text(
+                      "Need help?",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                  )
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
