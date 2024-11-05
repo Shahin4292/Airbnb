@@ -1,6 +1,6 @@
+import 'package:airbnb_app/firebase_options.dart';
 import 'package:airbnb_app/views/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 
 
