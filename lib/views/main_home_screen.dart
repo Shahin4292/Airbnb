@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'explore_screen.dart';
+
 class MainHomeScreen extends StatefulWidget {
   const MainHomeScreen({super.key});
 
@@ -14,7 +16,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   @override
   void initState() {
     pages = [
-      const Scaffold(),
+      const ExploreScreen(),
       const Scaffold(),
       const Scaffold(),
       const Scaffold(),

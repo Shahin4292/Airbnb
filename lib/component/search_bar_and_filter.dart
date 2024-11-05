@@ -6,7 +6,7 @@ class SearchBarAndFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 27),
+      padding: const EdgeInsets.symmetric(horizontal: 26,vertical: 10),
       child: Row(
         children: [
           Expanded(
