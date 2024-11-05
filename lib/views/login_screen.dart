@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'main_home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -116,16 +118,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     Colors.blue,
                     30,
                   ),
+                  const SizedBox(height: 15,),
                   InkWell(
-                    // onTap: () async {
-                    //   await FirebaseAuthServices().signInWithGoogle();
-                    //   Navigator.pushReplacement(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => const AppMainScreen(),
-                    //     ),
-                    //   );
-                    // },
+                    borderRadius: BorderRadius.circular(12),
+                    onTap: () async {
+                      // await FirebaseAuthServices().signInWithGoogle();
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainHomeScreen(),
+                        ),
+                      );
+                    },
                     child: socialIcons(
                       size,
                       FontAwesomeIcons.google,
@@ -134,6 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       27,
                     ),
                   ),
+                  const SizedBox(height: 15,),
                   socialIcons(
                     size,
                     Icons.apple,
@@ -141,6 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Colors.black,
                     30,
                   ),
+                  const SizedBox(height: 15,),
                   socialIcons(
                     size,
                     Icons.email_outlined,
@@ -167,35 +173,32 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Padding socialIcons(Size size, icon, name, color, double iconSize) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
-      child: Container(
-        width: size.width,
-        padding: const EdgeInsets.symmetric(vertical: 11),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(),
-        ),
-        child: Row(
-          children: [
-            SizedBox(width: size.width * 0.05),
-            Icon(
-              icon,
-              color: color,
-              size: iconSize,
+  Container socialIcons(Size size, icon, name, color, double iconSize) {
+    return Container(
+      width: size.width,
+      padding: const EdgeInsets.symmetric(vertical: 11),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(),
+      ),
+      child: Row(
+        children: [
+          SizedBox(width: size.width * 0.05),
+          Icon(
+            icon,
+            color: color,
+            size: iconSize,
+          ),
+          SizedBox(width: size.width * 0.18),
+          Text(
+            name,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
             ),
-            SizedBox(width: size.width * 0.18),
-            Text(
-              name,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            const SizedBox(width: 10),
-          ],
-        ),
+          ),
+          const SizedBox(width: 10),
+        ],
       ),
     );
   }
@@ -220,7 +223,6 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 8,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Country/Regin",
@@ -232,7 +234,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Nepal(+977)",
+                      "BD(+880)",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
