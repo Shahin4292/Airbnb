@@ -9,6 +9,19 @@ class MainHomeScreen extends StatefulWidget {
 
 class _MainHomeScreenState extends State<MainHomeScreen> {
   int selectedIndex = 0;
+  late final List<Widget> pages;
+
+  @override
+  void initState() {
+    pages = [
+      const Scaffold(),
+      const Scaffold(),
+      const Scaffold(),
+      const Scaffold(),
+      const Scaffold(),
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +50,6 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               color: selectedIndex == 0 ? Colors.pinkAccent : Colors.black45,
             ),
             label: "Explore",
-
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -58,7 +70,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             icon: Image.network(
               "https://static.vecteezy.com/system/resources/thumbnails/014/441/006/small_2x/chat-message-thin-line-icon-social-icon-set-png.png",
               height: 30,
-              color: selectedIndex == 2 ? Colors.pinkAccent : Colors.black45,
+              color: selectedIndex == 3 ? Colors.pinkAccent : Colors.black45,
             ),
             label: "Message",
           ),
@@ -66,12 +78,13 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             icon: Image.network(
               "https://cdn-icons-png.flaticon.com/512/1144/1144760.png",
               height: 30,
-              color: selectedIndex == 2 ? Colors.pinkAccent : Colors.black45,
+              color: selectedIndex == 4 ? Colors.pinkAccent : Colors.black45,
             ),
             label: "Profile",
           ),
         ],
       ),
+      body: pages[selectedIndex],
     );
   }
 }
